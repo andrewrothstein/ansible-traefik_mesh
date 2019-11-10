@@ -1,0 +1,7 @@
+---
+# vars file for maesh
+maesh_platform: '{{ maesh_os }}_{{ maesh_arch }}'
+maesh_archive: maesh_{{ maesh_ver }}_{{ maesh_platform }}.{{ maesh_archive_type | default("tar.gz") }}
+maesh_url: '{{ maesh_mirror }}/{{ maesh_ver }}/{{ maesh_archive }}'
+maesh_install_dir: '{{ maesh_parent_install_dir }}/maesh-{{ maesh_ver }}'
+maesh_checksum: '{{ maesh_checksums[maesh_ver][maesh_platform] }}'
