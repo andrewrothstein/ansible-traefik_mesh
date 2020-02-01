@@ -51,4 +51,4 @@ dl_ver()
     dl $ver $lchecksums linux armv5
 }
 
-dl_ver ${1:-v0.7.0}
+dl_ver ${1:-v1.0.0}

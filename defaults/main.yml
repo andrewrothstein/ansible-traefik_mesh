@@ -1,6 +1,6 @@
 ---
 # defaults file for maesh
-maesh_ver: v0.7.0
+maesh_ver: v1.0.0
 maesh_mirror: https://github.com/containous/maesh/releases/download
 maesh_os: linux
 maesh_arch: amd64
@@ -46,3 +46,43 @@ maesh_checksums:
     linux_armv6: sha256:358175866a2679e261a3115a101c71ebc08fec16a1aa30b474a1e85754c92bbd
     # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_linux_armv5.tar.gz
     linux_armv5: sha256:391dc91fec390bf24ec722da3d41c349548ee148c672873b34133b0ec3f86911
+  # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_checksums.txt
+  v1.0.0:
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_arm64.tar.gz
+    linux_arm64: sha256:7ba52d1f3b36465593bbd22c5ff27c78c2ddcf030c3a5d13154539b340b4485a
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_freebsd_386.tar.gz
+    freebsd_386: sha256:b5ac97208b74de87c59f255db0e329d441ca0a8d8a4486dc8c4c4f11e863a756
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_armv7.tar.gz
+    linux_armv7: sha256:fad794a529f2d44c5f5a3d713fe697db0f29e9acdbfde50899c91d0da1a0f020
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_windows_amd64.zip
+    windows_amd64: sha256:4b13a4b03d45bb9cd3b3b680870b7a9675eb522c3d7f36895eebf6de9491c377
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_openbsd_386.tar.gz
+    openbsd_386: sha256:60cccbb3bca049e3eac8261f98985a458391e1230aa4b8d35e5c3a69bad55bde
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_freebsd_armv5.tar.gz
+    freebsd_armv5: sha256:628d66b4ca5a7fa23495728a391f92d5e9a84b44a7032971feb28e387dea38e1
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_windows_386.zip
+    windows_386: sha256:3d4ee6518d4fa936ac391ded67b93f686fddb81ff21d4734a6cd7f767ba96f2a
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_freebsd_amd64.tar.gz
+    freebsd_amd64: sha256:8b06e0cdb8feb2fd10f8e9f026e6aa7b477f3ec2f4fe940a760987d7fcb2a711
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_freebsd_armv6.tar.gz
+    freebsd_armv6: sha256:00621ad7e6e1f3bf842c4f510f19181844b3d928e0041a07e6010d3b278eb808
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_openbsd_armv7.tar.gz
+    openbsd_armv7: sha256:0172fe34a0e6137e120d38e6a7cf0e28889a55d6da75921b58929bc041be4c6f
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_openbsd_armv5.tar.gz
+    openbsd_armv5: sha256:0877b6db4e6a685333157cb53ce5094e6fa697a171313998f60bb2705e0d90c6
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_freebsd_armv7.tar.gz
+    freebsd_armv7: sha256:7ee6586ab4dae1e367f632aac7e255d9018e289692ab35036051a36c018e1daa
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_openbsd_armv6.tar.gz
+    openbsd_armv6: sha256:cfcb47939334cd4b5af5b8697ef49f5b3f8b0b6b275b776227b79cfbfcf13f5b
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_386.tar.gz
+    linux_386: sha256:05b6da06918414069045940d7f4d39185c69d92219cf87810fb14c40dae94c46
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_darwin_amd64.tar.gz
+    darwin_amd64: sha256:e90be6333a6686ea285054f9c63c93766e4a8c198de3b98dfecc86d3a2acc518
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_openbsd_amd64.tar.gz
+    openbsd_amd64: sha256:770a57ef4e79bab3657c65405e6546d35ddf975f825a6d1e8d6a75a491aa35f8
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_amd64.tar.gz
+    linux_amd64: sha256:16f51689a049e4eea7b34dce13727750648a122d598ac4247ebed4e5d8c18906
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_armv6.tar.gz
+    linux_armv6: sha256:86fea1502fea71b3af3108fa8f3d688dad0e37bf50ddc1c301a46af7bc86e789
+    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_armv5.tar.gz
+    linux_armv5: sha256:f0d371e2504e59baff3194c052d7534eff510c238a860f49bc03e03f0f323657
