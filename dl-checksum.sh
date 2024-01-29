@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
+set -e
 DIR=~/Downloads
-MIRROR=https://github.com/containous/maesh/releases/download
+MIRROR=https://github.com/traefik/mesh/releases/download
 
 dl()
 {
@@ -10,45 +11,36 @@ dl()
     local arch=$4
     local archive_type=${5:-tar.gz}
     local platform="${os}_${arch}"
-    local file=maesh_${ver}_${platform}.${archive_type}
+    local file=traefik-mesh_${ver}_${platform}.${archive_type}
     local url=$MIRROR/$ver/$file
     printf "    # %s\n" $url
-    printf "    %s: sha256:%s\n" $platform `fgrep $file $lchecksums | awk '{print $1}'`
+    printf "    %s: sha256:%s\n" $platform $(grep $file $lchecksums | awk '{print $1}')
 }
 
 dl_ver()
 {
     local ver=$1
-    local checksums=maesh_${ver}_checksums.txt
+    local checksums=traefik-mesh_${ver}_checksums.txt
     local lchecksums=$DIR/$checksums
     local rchecksums=$MIRROR/$ver/$checksums
     if [ ! -e $lchecksums ];
     then
-        wget -q -O $lchecksums $rchecksums
+        curl -sSLf -o $lchecksums $rchecksums
     fi
 
     printf "  # %s\n" $rchecksums
     printf "  %s:\n" $ver
 
-    dl $ver $lchecksums linux arm64
     dl $ver $lchecksums freebsd 386
-    dl $ver $lchecksums linux armv7
-    dl $ver $lchecksums windows amd64 zip
-    dl $ver $lchecksums openbsd 386
-    dl $ver $lchecksums freebsd armv5
-    dl $ver $lchecksums windows 386 zip
-    dl $ver $lchecksums freebsd amd64
-    dl $ver $lchecksums freebsd armv6
-    dl $ver $lchecksums openbsd armv7
-    dl $ver $lchecksums openbsd armv5
     dl $ver $lchecksums freebsd armv7
-    dl $ver $lchecksums openbsd armv6
-    dl $ver $lchecksums linux 386
-    dl $ver $lchecksums darwin amd64
+    dl $ver $lchecksums freebsd amd64
+    dl $ver $lchecksums openbsd 386
     dl $ver $lchecksums openbsd amd64
+    dl $ver $lchecksums openbsd armv7
+    dl $ver $lchecksums linux 386
     dl $ver $lchecksums linux amd64
-    dl $ver $lchecksums linux armv6
-    dl $ver $lchecksums linux armv5
+    dl $ver $lchecksums linux arm64
+    dl $ver $lchecksums linux armv7
 }
 
-dl_ver ${1:-v1.0.0}
+dl_ver ${1:-v1.4.8}

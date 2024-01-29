@@ -1,36 +1,34 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: installs maesh
   company: BlackRock Financial Management
-  license:
-    - MIT
-  min_ansible_version: 2.0
+  description: installs maesh
+  galaxy_tags:
+    - development
+  license: MIT
+  min_ansible_version: '2.0'
+  namespace: andrewrothstein
   platforms:
-    - name: EL
-      versions:
-        - all
-    - name: Fedora
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - all
     - name: Alpine
       versions:
         - all
-    - name: Archlinux
+    - name: ArchLinux
       versions:
         - all
     - name: Debian
       versions:
-        - buster
-        - jessie
-        - stretch
-  galaxy_tags:
-    - development
+        - bookworm
+        - bullseye
+    - name: EL
+      versions:
+        - '8'
+        - '9'
+    - name: Fedora
+      versions:
+        - '38'
+        - '39'
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
   role_name: maesh
-
-dependencies:
-  - role: andrewrothstein.unarchive-deps
-    version: v1.1.2

@@ -1,7 +1,12 @@
 ---
-# vars file for maesh
-maesh_platform: '{{ maesh_os }}_{{ maesh_arch }}'
-maesh_archive: maesh_{{ maesh_ver }}_{{ maesh_platform }}.{{ maesh_archive_type | default("tar.gz") }}
-maesh_url: '{{ maesh_mirror }}/{{ maesh_ver }}/{{ maesh_archive }}'
-maesh_install_dir: '{{ maesh_parent_install_dir }}/maesh-{{ maesh_ver }}'
-maesh_checksum: '{{ maesh_checksums[maesh_ver][maesh_platform] }}'
+# vars file for traefik_mesh
+traefik_mesh_os: '{{ ansible_system | lower }}'
+traefik_mesh_arch: '{{ traefik_mesh_arch_map[ansible_architecture] }}'
+traefik_mesh_platform: '{{ traefik_mesh_os }}_{{ traefik_mesh_arch }}'
+traefik_mesh_archive: traefik-mesh_{{ traefik_mesh_ver }}_{{ traefik_mesh_platform }}.{{ traefik_mesh_archive_type | default("tar.gz") }}
+traefik_mesh_tmp_archive: '{{ traefik_mesh_tmp_dir | default("/tmp") }}/{{ traefik_mesh_archive }}'
+traefik_mesh_url: '{{ traefik_mesh_mirror }}/{{ traefik_mesh_ver }}/{{ traefik_mesh_archive }}'
+traefik_mesh_install_dir: '{{ traefik_mesh_parent_install_dir }}/traefik_mesh-{{ traefik_mesh_ver }}'
+traefik_mesh_checksum: '{{ traefik_mesh_checksums[traefik_mesh_ver][traefik_mesh_platform] }}'
+traefik_mesh_exe: '{{ traefik_mesh_install_dir }}/traefik-mesh'
+traefik_mesh_link: '{{ traefik_mesh_parent_install_dir }}/bin/traefik-mesh'

@@ -1,6 +1,9 @@
 ---
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Installing andrewrothstein.unarchivedeps
+  ansible.builtin.include_role:
+    name: andrewrothstein.unarchivedeps
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -9,48 +12,49 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install
-  become: yes
-  stat:
-    path: '{{ maesh_install_dir }}'
-  changed_when: False
-  register: maesh_binary
-- when: not maesh_binary.stat.exists
+- name: Check for install in {{ traefik_mesh_exe }}
+  become: true
+  ansible.builtin.stat:
+    path: '{{ traefik_mesh_exe }}'
+  changed_when: false
+  register: traefik_mesh_binary
+- name: Downloading and installing traefik-mesh
+  when: not traefik_mesh_binary.stat.exists
   block:
-    - name: download
-      become: yes
+    - name: Downloading {{ traefik_mesh_url }}
+      become: true
       become_user: root
-      get_url:
-        url: '{{ maesh_url }}'
-        dest: /tmp/{{ maesh_archive }}
-        mode: 0644
-        checksum: '{{ maesh_checksum }}'
-    - name: mkdir
-      become: yes
+      ansible.builtin.get_url:
+        url: '{{ traefik_mesh_url }}'
+        dest: '{{ traefik_mesh_tmp_archive }}'
+        mode: '644'
+        checksum: '{{ traefik_mesh_checksum }}'
+    - name: Mkdir {{ traefik_mesh_install_dir }}
+      become: true
       become_user: root
-      file:
-        path: '{{ maesh_install_dir }}'
-        mode: 0755
+      ansible.builtin.file:
+        path: '{{ traefik_mesh_install_dir }}'
+        mode: '755'
         state: directory
-    - name: unarchive
-      become: yes
+    - name: Unarchiving {{ traefik_mesh_tmp_archive }}
+      become: true
       become_user: root
-      unarchive:
-        remote_src: yes
-        src: /tmp/{{ maesh_archive }}
-        dest: '{{ maesh_install_dir }}'
-        creates: '{{ maesh_install_dir }}/maesh'
+      ansible.builtin.unarchive:
+        remote_src: true
+        src: '{{ traefik_mesh_tmp_archive }}'
+        dest: '{{ traefik_mesh_install_dir }}'
+        creates: '{{ traefik_mesh_exe }}'
   always:
-    - name: clean
-      become: yes
+    - name: Rm {{ traefik_mesh_tmp_archive }}
+      become: true
       become_user: root
-      file:
-        path: /tmp/{{ maesh_archive }}
+      ansible.builtin.file:
+        path: '{{ traefik_mesh_tmp_archive }}'
         state: absent
-- name: link
-  become: yes
+- name: Link {{ traefik_mesh_link }} to {{ traefik_mesh_exe }}
+  become: true
   become_user: root
-  file:
-    src: '{{ maesh_install_dir }}/maesh'
-    dest: '{{ maesh_parent_install_dir }}/bin/maesh'
+  ansible.builtin.file:
+    src: '{{ traefik_mesh_exe }}'
+    dest: '{{ traefik_mesh_link }}'
     state: link

@@ -1,4 +1,12 @@
 ---
 - hosts: all
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
+  tasks:
+    - name: Executing 'traefik-mesh version'
+      ansible.builtin.command: /usr/local/bin/traefik-mesh version
+      changed_when: false
+      register: traefik_mesh_test_output
+    - name: Output from 'traefik-mesh version'
+      ansible.builtin.debug:
+        msg: '{{ traefik_mesh_test_output.stdout }}'

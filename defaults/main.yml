@@ -1,88 +1,33 @@
 ---
-# defaults file for maesh
-maesh_ver: v1.0.0
-maesh_mirror: https://github.com/containous/maesh/releases/download
-maesh_os: linux
-maesh_arch: amd64
-maesh_parent_install_dir: /usr/local
-maesh_checksums:
-  # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_checksums.txt
-  v0.7.0:
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_linux_arm64.tar.gz
-    linux_arm64: sha256:4fb23c74e1fa46f3fe47d9988be6601a697bcd120d431b7a96f9a05856766e07
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_freebsd_386.tar.gz
-    freebsd_386: sha256:6488b87fcc185c2307205ba494c23ed2f3666a61d4f9e19b1506fa3241ddb4d1
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_linux_armv7.tar.gz
-    linux_armv7: sha256:5b22601052ca0baddbd178433e801826a2f9167b67701b826891111ed404a686
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_windows_amd64.zip
-    windows_amd64: sha256:5a679670e933b6935811caeed5e9b1ae070d160aa74c3004107e0d8b408a751b
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_openbsd_386.tar.gz
-    openbsd_386: sha256:14384d3c75503cc9ec50c6097ccf1c975c354a401645d5d1e13c18dbffba0d1d
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_freebsd_armv5.tar.gz
-    freebsd_armv5: sha256:cce868b69b199b6b8e9ba4b0ca6331e1b8d24a1fdacb993ab390f3a6b854cdcc
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_windows_386.zip
-    windows_386: sha256:c6539691c8932eab14d356b316288d1d0ccb9159893a8d237bdf8769edbba02f
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_freebsd_amd64.tar.gz
-    freebsd_amd64: sha256:6c2797c276435ec129f4ff43e0400998fef217ccc0bf9c99cc221dd187e3a2c9
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_freebsd_armv6.tar.gz
-    freebsd_armv6: sha256:10b4056b1d989f20572f5aebd19b1c224aa8d05162a595c0a7e2ece1685bd755
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_openbsd_armv7.tar.gz
-    openbsd_armv7: sha256:07c181c1e529b48813216798316d6f5cd628559ac692f16345facd85effc5cd8
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_openbsd_armv5.tar.gz
-    openbsd_armv5: sha256:55af5113bc4c63133d5986255c1dd92fee74af11c769e8b207765351e1f6dbde
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_freebsd_armv7.tar.gz
-    freebsd_armv7: sha256:fa6dcaf4113246fcb7d546170abe8840686907ac5d67d2e6195bac3322745af4
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_openbsd_armv6.tar.gz
-    openbsd_armv6: sha256:988879ddf870bd0086556a77337f514b3f273e6185b5e77ea6b5232beef5bc72
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_linux_386.tar.gz
-    linux_386: sha256:4343ef5117366f2b4e028f2a2dd91cf58a0c64c902fb94e387a8db20b14f0d26
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_darwin_amd64.tar.gz
-    darwin_amd64: sha256:baf539043fd6a0490308e3ee2071dfe6bcf0e5b36bda8c3b16ced4797d92d6e5
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_openbsd_amd64.tar.gz
-    openbsd_amd64: sha256:8ef05b83500b8ebd116f7c3fe8c33e3cfc1d917dc20e2ec7a91c691435c9d9eb
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_linux_amd64.tar.gz
-    linux_amd64: sha256:d57a3af643c882e2832e6010818b3d7bdb8b586f9295a2e97dbc1c8b4ac97c32
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_linux_armv6.tar.gz
-    linux_armv6: sha256:358175866a2679e261a3115a101c71ebc08fec16a1aa30b474a1e85754c92bbd
-    # https://github.com/containous/maesh/releases/download/v0.7.0/maesh_v0.7.0_linux_armv5.tar.gz
-    linux_armv5: sha256:391dc91fec390bf24ec722da3d41c349548ee148c672873b34133b0ec3f86911
-  # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_checksums.txt
-  v1.0.0:
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_arm64.tar.gz
-    linux_arm64: sha256:7ba52d1f3b36465593bbd22c5ff27c78c2ddcf030c3a5d13154539b340b4485a
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_freebsd_386.tar.gz
-    freebsd_386: sha256:b5ac97208b74de87c59f255db0e329d441ca0a8d8a4486dc8c4c4f11e863a756
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_armv7.tar.gz
-    linux_armv7: sha256:fad794a529f2d44c5f5a3d713fe697db0f29e9acdbfde50899c91d0da1a0f020
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_windows_amd64.zip
-    windows_amd64: sha256:4b13a4b03d45bb9cd3b3b680870b7a9675eb522c3d7f36895eebf6de9491c377
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_openbsd_386.tar.gz
-    openbsd_386: sha256:60cccbb3bca049e3eac8261f98985a458391e1230aa4b8d35e5c3a69bad55bde
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_freebsd_armv5.tar.gz
-    freebsd_armv5: sha256:628d66b4ca5a7fa23495728a391f92d5e9a84b44a7032971feb28e387dea38e1
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_windows_386.zip
-    windows_386: sha256:3d4ee6518d4fa936ac391ded67b93f686fddb81ff21d4734a6cd7f767ba96f2a
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_freebsd_amd64.tar.gz
-    freebsd_amd64: sha256:8b06e0cdb8feb2fd10f8e9f026e6aa7b477f3ec2f4fe940a760987d7fcb2a711
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_freebsd_armv6.tar.gz
-    freebsd_armv6: sha256:00621ad7e6e1f3bf842c4f510f19181844b3d928e0041a07e6010d3b278eb808
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_openbsd_armv7.tar.gz
-    openbsd_armv7: sha256:0172fe34a0e6137e120d38e6a7cf0e28889a55d6da75921b58929bc041be4c6f
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_openbsd_armv5.tar.gz
-    openbsd_armv5: sha256:0877b6db4e6a685333157cb53ce5094e6fa697a171313998f60bb2705e0d90c6
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_freebsd_armv7.tar.gz
-    freebsd_armv7: sha256:7ee6586ab4dae1e367f632aac7e255d9018e289692ab35036051a36c018e1daa
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_openbsd_armv6.tar.gz
-    openbsd_armv6: sha256:cfcb47939334cd4b5af5b8697ef49f5b3f8b0b6b275b776227b79cfbfcf13f5b
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_386.tar.gz
-    linux_386: sha256:05b6da06918414069045940d7f4d39185c69d92219cf87810fb14c40dae94c46
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_darwin_amd64.tar.gz
-    darwin_amd64: sha256:e90be6333a6686ea285054f9c63c93766e4a8c198de3b98dfecc86d3a2acc518
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_openbsd_amd64.tar.gz
-    openbsd_amd64: sha256:770a57ef4e79bab3657c65405e6546d35ddf975f825a6d1e8d6a75a491aa35f8
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_amd64.tar.gz
-    linux_amd64: sha256:16f51689a049e4eea7b34dce13727750648a122d598ac4247ebed4e5d8c18906
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_armv6.tar.gz
-    linux_armv6: sha256:86fea1502fea71b3af3108fa8f3d688dad0e37bf50ddc1c301a46af7bc86e789
-    # https://github.com/containous/maesh/releases/download/v1.0.0/maesh_v1.0.0_linux_armv5.tar.gz
-    linux_armv5: sha256:f0d371e2504e59baff3194c052d7534eff510c238a860f49bc03e03f0f323657
+# defaults file for traefik_mesh
+traefik_mesh_ver: v1.4.8
+traefik_mesh_mirror: https://github.com/traefik/mesh/releases/download
+traefik_mesh_arch_map:
+  aarch64: arm64
+  arm46: arm64
+  x86_32: '386'
+  x86_64: amd64
+traefik_mesh_parent_install_dir: /usr/local
+traefik_mesh_checksums:
+  # https://github.com/traefik/mesh/releases/download/v1.4.8/traefik-mesh_v1.4.8_checksums.txt
+  v1.4.8:
+    # https://github.com/traefik/mesh/releases/download/v1.4.8/traefik-mesh_v1.4.8_freebsd_386.tar.gz
+    freebsd_386: sha256:5d277483e238fc9f1fa1f024693928a6e46b576b032fbac0e0f03cd22a05f9ad
+    # https://github.com/traefik/mesh/releases/download/v1.4.8/traefik-mesh_v1.4.8_freebsd_armv7.tar.gz
+    freebsd_armv7: sha256:1e6616ccfa73fd5817578c985397fc3bdb8738a7590e029117eb7c50b266e3f3
+    # https://github.com/traefik/mesh/releases/download/v1.4.8/traefik-mesh_v1.4.8_freebsd_amd64.tar.gz
+    freebsd_amd64: sha256:48607aa440dbdd58b7263b245e3d80fcb47ad997d83ed5dd987c578226009a9d
+    # https://github.com/traefik/mesh/releases/download/v1.4.8/traefik-mesh_v1.4.8_openbsd_386.tar.gz
+    openbsd_386: sha256:6bb7ded9d130171c5c844ff04ecbe6b25cbb1fd4e6ffc2001e7f08e4121274b4
+    # https://github.com/traefik/mesh/releases/download/v1.4.8/traefik-mesh_v1.4.8_openbsd_amd64.tar.gz
+    openbsd_amd64: sha256:568c0f614a49f7b16d267609606f5d0e7e1f23becf8867db49d9269889ee40d8
+    # https://github.com/traefik/mesh/releases/download/v1.4.8/traefik-mesh_v1.4.8_openbsd_armv7.tar.gz
+    openbsd_armv7: sha256:ce90b68bf0189296b47ff8f39e4dd6482f0c2ccd480e1d7f702f01fba7ada883
+    # https://github.com/traefik/mesh/releases/download/v1.4.8/traefik-mesh_v1.4.8_linux_386.tar.gz
+    linux_386: sha256:cdc2f6602cd3ce3911d85173982dafd2fb5459837dceefb13b2b6d03cd398bb5
+    # https://github.com/traefik/mesh/releases/download/v1.4.8/traefik-mesh_v1.4.8_linux_amd64.tar.gz
+    linux_amd64: sha256:86c3ca6ebd0d1fe51d1908d8e063abe84145893b2761643deb36f4b1406b5bdc
+    # https://github.com/traefik/mesh/releases/download/v1.4.8/traefik-mesh_v1.4.8_linux_arm64.tar.gz
+    linux_arm64: sha256:708ea480c50c413e240bf9dce53edfb68354f212c9c237780301e5451d90b415
+    # https://github.com/traefik/mesh/releases/download/v1.4.8/traefik-mesh_v1.4.8_linux_armv7.tar.gz
+    linux_armv7: sha256:9c0e990270c830abb186d99d9165810e443b2e3a620f03575c26a39a79dffc9d
